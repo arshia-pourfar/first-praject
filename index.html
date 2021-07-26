@@ -9,10 +9,22 @@
 
 <body>
   <h1><a href="https://instagram.com/">instagram.Com</a></h1>
+  <div id="div1">
+    <p id="p1">this is paragraph</p>
+    <p id="p2">this is another paragraph</p>
+
+  </div>
 </body>
 
 <script>
-  
+  var para = document.createElement("p");
+  var node = document.createTextNode("This is New");
+  para.appendChild(node);
+  var element = document.getElementById("div1");
+  //element.prepend(para);
+  //element.appendChild(para);
+  var child = document.getElementById("p2");
+  element.insertBefore(para,child);
 </script>
 
 </html>
