@@ -1,0 +1,96 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Car</title>
+</head>
+
+<body>
+    <div id="remove">
+        <button class="btn-close">Close Door</button>
+        <br>
+        <button class="btn-open" id="btn-open" onclick="openn()">Open Door</button>
+        <br>
+        <img id="carr" class="car" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaWt_82U8Uo9lKWWz_QKuQLsBPsSZY7-9Ahw&usqp=CAU">
+    </div>
+    <div id="page2"><span style="position: absolute;margin-top: 5px;margin-left: 7px;">on doble click turn of car and exit</span>
+        <button class="btn_start" onclick="startt()" ondblclick="dbstart()">Start</button>
+        <br>
+        <div id="color"></div>
+        <span id="checkSpeed">00</span><br>
+        <br>
+
+        <img class="mycar" src="https://www.loginbrands.com/images/Article/101949-Genesis-G90-2020-Inside-23.jpg">
+
+        <button id="tormoz" onclick="tormozz()" style="visibility: hidden;">tormoz</button>
+        <button id="gas" onclick="gazz()" style="visibility: hidden;">Gas</button>
+        <br>
+
+    </div>
+</body>
+<script>
+    var checkSpeed = document.getElementById('checkSpeed');
+    var gas = document.getElementById('gas');
+    var tormoz = document.getElementById('tormoz');
+    var seconds = 00;
+    var speed = 0;
+    var Interval;
+
+    function openn() {
+        document.getElementById("remove").style.visibility = "hidden";
+        document.getElementById("page2").style.visibility = "visible";
+
+    }
+
+    function startt() {
+        document.getElementById("color").style.backgroundColor = "#76c500";
+        document.getElementById("tormoz").style.visibility = "visible";
+        gas.style.visibility = "visible";
+        var audio = new Audio("car-satart1.mp3");
+        audio.play();
+    }
+
+    function dbstart() {
+        document.getElementById("color").style.backgroundColor = "grey";
+        document.getElementById("remove").style.visibility = "visible";
+        document.getElementById("page2").style.visibility = "hidden";
+        gas.style.visibility = "hidden";
+        tormoz.style.visibility = "hidden";
+    }
+
+    function tormozz() {
+        checkSpeed.style.color = "red";
+        clearInterval(Interval);
+        Interval = setInterval(startTimer, 250);
+
+        function startTimer() {
+
+            if (seconds != 00) {
+                seconds--;
+                checkSpeed.innerHTML = seconds;
+            } else if (seconds >= 01) {
+                checkSpeed.textContent = "00";
+            }
+        }
+    }
+
+    function gazz() {
+        checkSpeed.style.color = "green";
+        clearInterval(Interval);
+        Interval = setInterval(startTimer, 250);
+
+        function startTimer() {
+            seconds++;
+
+            if (seconds < 350) {
+                checkSpeed.innerHTML = seconds;
+            }
+        }
+    }
+    document.getElementById("demo").innerHTML = speed;
+</script>
+
+</html>

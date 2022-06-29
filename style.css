@@ -1,0 +1,73 @@
+    body {
+        overflow: hidden;
+    }
+    
+    #remove {
+        width: 100%;
+        position: absolute;
+    }
+    
+    .car {
+        margin-left: 30%;
+        margin-top: 5%;
+        height: 10cm;
+    }
+    
+    .btn-close {
+        position: absolute;
+        background-color: red;
+    }
+    
+    .btn-open {
+        position: absolute;
+        background-color: green;
+    }
+    
+    #page2 {
+        width: 100%;
+        position: absolute;
+        visibility: hidden;
+    }
+    
+    .mycar {
+        margin-left: 30%;
+        height: 8cm;
+    }
+    
+    .btn_start {
+        margin-top: 4%;
+        border-radius: 50px;
+        margin-left: 5.5%;
+        height: 1.5cm;
+        width: 2cm;
+    }
+    
+    #color {
+        background-color: grey;
+        height: 15px;
+        width: 50px;
+        margin-left: 6.2%;
+        margin-top: 10px;
+        border: 2px solid black;
+    }
+    
+    #gas {
+        background-color: grey;
+        height: 3cm;
+        width: 1.5cm;
+        margin-top: 13px;
+        margin-left: 1cm;
+    }
+    
+    #tormoz {
+        background-color: grey;
+        height: 2cm;
+        width: 2cm;
+        margin-top: 1cm;
+        margin-left: 15cm;
+    }
+    
+    #checkSpeed {
+        font-size: xx-large;
+        margin-left: 47%;
+    }
